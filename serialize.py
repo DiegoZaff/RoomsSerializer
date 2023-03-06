@@ -18,7 +18,7 @@ def extract_idaula(url):
     parameters = parse_qs(query_string)
 
     # get the value of the idaula parameter and return it
-    idaula = parameters["idaula"][0]
+    idaula = int(parameters["idaula"][0])
     return idaula
 
 
@@ -59,5 +59,5 @@ for acronym in acronyms:
 json_data = json.dumps(dict)
 
 # Write JSON data to file
-with open('data.json', 'w') as f:
+with open('rooms.json', 'w') as f:
     f.write(json_data)
